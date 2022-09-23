@@ -1,5 +1,7 @@
 package com.thoughtworks.parkingLot;
 
+import com.thoughtworks.parkingLot.exceptions.ParkingSlotNotAvailableException;
+
 import java.util.HashSet;
 
 public class ParkingLot {
@@ -11,9 +13,10 @@ public class ParkingLot {
         parkedVehicles = new HashSet<>(capacity);
     }
 
-    public void park(Parkable parkable) {
-        if (isSlotAvailable())
-            parkedVehicles.add(parkable);
+    public void park(Parkable parkable) throws ParkingSlotNotAvailableException {
+        if (!isSlotAvailable())
+            throw new ParkingSlotNotAvailableException();
+        parkedVehicles.add(parkable);
     }
 
     private boolean isSlotAvailable() {
