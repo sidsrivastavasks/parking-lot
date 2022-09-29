@@ -1,7 +1,7 @@
 package com.thoughtworks.parkingLot;
 
 import com.thoughtworks.parkingLot.exceptions.AlreadyParkedException;
-import com.thoughtworks.parkingLot.exceptions.ParkingSlotNotAvailableException;
+import com.thoughtworks.parkingLot.exceptions.ParkingLotFullException;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ParkingLotTest {
 
     @Test
-    void shouldParkACarWhenSpaceIsAvailable() throws ParkingSlotNotAvailableException, AlreadyParkedException {
+    void shouldParkACarWhenSpaceIsAvailable() throws ParkingLotFullException, AlreadyParkedException {
         ParkingLot parkingLot = new ParkingLot(5);
         Parkable car = new Car();
 
@@ -21,18 +21,18 @@ public class ParkingLotTest {
     }
 
     @Test
-    void shouldNotParkACarWhenSpaceIsNotAvailable() throws ParkingSlotNotAvailableException, AlreadyParkedException {
+    void shouldNotParkACarWhenSpaceIsNotAvailable() throws ParkingLotFullException, AlreadyParkedException {
         ParkingLot parkingLot = new ParkingLot(1);
         Parkable car1 = new Car();
         Parkable car2 = new Car();
 
         parkingLot.park(car1);
 
-        assertThrows(ParkingSlotNotAvailableException.class, () -> parkingLot.park(car2));
+        assertThrows(ParkingLotFullException.class, () -> parkingLot.park(car2));
     }
 
     @Test
-    void shouldNotParkACarWhenItIsAlreadyParked() throws ParkingSlotNotAvailableException, AlreadyParkedException {
+    void shouldNotParkACarWhenItIsAlreadyParked() throws ParkingLotFullException, AlreadyParkedException {
         ParkingLot parkingLot = new ParkingLot(5);
         Parkable car = new Car();
 
