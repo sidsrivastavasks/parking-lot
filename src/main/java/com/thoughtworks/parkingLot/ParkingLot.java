@@ -17,16 +17,16 @@ public class ParkingLot {
     public void park(Parkable parkable) throws ParkingLotFullException, AlreadyParkedException {
         if (isFull())
             throw new ParkingLotFullException();
-        if(isParked(parkable))
+        if (isParked(parkable))
             throw new AlreadyParkedException();
         parkedVehicles.add(parkable);
     }
 
-    private boolean isFull() {
-        return parkedVehicles.size() >= capacity;
-    }
-
     public boolean isParked(Parkable parkable) {
         return parkedVehicles.contains(parkable);
+    }
+
+    private boolean isFull() {
+        return parkedVehicles.size() >= capacity;
     }
 }
