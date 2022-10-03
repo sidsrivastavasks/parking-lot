@@ -2,7 +2,7 @@
 
 We'll be focussing on Command Query Separation and Custom Exceptions along with Clean Code practices 
 
-Sanvi parked her car in the parking lot so that she can catch her flight.
+Sanvi parked her car 🚘 in the parking lot so that she can catch her flight.
 
 We have Sanvi's code for parking the car in this repository.
 
@@ -25,6 +25,6 @@ We have Sanvi's code for parking the car in this repository.
 ```
 
 Now it's time for her to go home.
-Can you help her unpark the car?
+Can you help her unpark the car 🚗 ?
 
 You can Fork and Clone this repository to get started .
