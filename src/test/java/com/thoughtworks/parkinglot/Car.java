@@ -1,4 +1,4 @@
-package com.thoughtworks.parkingLot;
+package com.thoughtworks.parkinglot;
 
 public class Car implements Parkable {
 }

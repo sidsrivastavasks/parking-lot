@@ -1,7 +1,7 @@
-package com.thoughtworks.parkingLot;
+package com.thoughtworks.parkinglot;
 
-import com.thoughtworks.parkingLot.exceptions.AlreadyParkedException;
-import com.thoughtworks.parkingLot.exceptions.ParkingLotFullException;
+import com.thoughtworks.parkinglot.exceptions.AlreadyParkedException;
+import com.thoughtworks.parkinglot.exceptions.ParkingLotFullException;
 
 import java.util.HashSet;
 
