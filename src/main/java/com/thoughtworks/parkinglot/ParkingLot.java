@@ -2,6 +2,7 @@ package com.thoughtworks.parkinglot;
 
 import com.thoughtworks.parkinglot.exceptions.AlreadyParkedException;
 import com.thoughtworks.parkinglot.exceptions.ParkingLotFullException;
+import com.thoughtworks.parkinglot.exceptions.ParkableIsNotInTheLotException;
 
 import java.util.HashSet;
 
@@ -20,6 +21,13 @@ public class ParkingLot {
         if (isParked(parkable))
             throw new AlreadyParkedException();
         parkedVehicles.add(parkable);
+    }
+
+    public void unpark(Parkable parkable)throws ParkableIsNotInTheLotException{
+        if(!parkedVehicles.contains(parkable)){
+            throw new ParkableIsNotInTheLotException();
+        }
+        parkedVehicles.remove(parkable);
     }
 
     public boolean isParked(Parkable parkable) {
